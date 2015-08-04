@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CDMAMallModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="AddProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="admin">
+          <Parameter Name="productName" Type="nvarchar" Mode="In" />
+          <Parameter Name="productInfo" Type="nvarchar" Mode="In" />
+          <Parameter Name="productDescription" Type="nvarchar" Mode="In" />
+          <Parameter Name="productDetails" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="pImagUrl" Type="varchar" Mode="In" />
+          <Parameter Name="subCategoryID" Type="int" Mode="In" />
+          <Parameter Name="merchantID" Type="int" Mode="In" />
+          <Parameter Name="TCount" Type="int" Mode="In" />
+          <Parameter Name="onSaleTime" Type="datetime2" Mode="In" />
+          <Parameter Name="offSaleTime" Type="datetime2" Mode="In" />
+          <Parameter Name="keywordProductID" Type="varchar" Mode="In" />
+          <Parameter Name="productTypeID" Type="int" Mode="In" />
+          <Parameter Name="orderNum" Type="int" Mode="In" />
+          <Parameter Name="attributeXml" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="imgs" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="expressCompanyId" Type="int" Mode="In" />
+          <Parameter Name="expressFee" Type="int" Mode="In" />
+          <Parameter Name="isRecommand" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="AddProductExtend" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="admin">
+          <Parameter Name="productInfo" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="productDescription" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="originalPrice" Type="int" Mode="In" />
+          <Parameter Name="TCount" Type="int" Mode="In" />
+          <Parameter Name="productId" Type="int" Mode="In" />
+          <Parameter Name="IsRecommanded" Type="bit" Mode="In" />
+          <Parameter Name="orderNum" Type="int" Mode="In" />
+          <Parameter Name="onsaletime" Type="datetime" Mode="In" />
+          <Parameter Name="offsaletime" Type="datetime" Mode="In" />
+          <Parameter Name="attributeValue" Type="varchar" Mode="In" />
+          <Parameter Name="attributeDes" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="realPrice" Type="int" Mode="In" />
+          <Parameter Name="priceDescription" Type="nvarchar" Mode="In" />
+          <Parameter Name="presentCoin" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getProductInfos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="admin">
+          <Parameter Name="productId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getProductList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="admin">
+          <Parameter Name="subCategoryId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getSubCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="admin" />
+        <Function Name="updateExtendProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="admin">
+          <Parameter Name="productId" Type="int" Mode="In" />
+          <Parameter Name="attributev" Type="varchar" Mode="In" />
+          <Parameter Name="pextendinfo" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="onsaletime" Type="datetime" Mode="In" />
+          <Parameter Name="offsaletime" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="updateProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="admin">
+          <Parameter Name="productId" Type="int" Mode="In" />
+          <Parameter Name="productName" Type="nvarchar" Mode="In" />
+          <Parameter Name="productsummary" Type="nvarchar" Mode="In" />
+          <Parameter Name="productDes" Type="nvarchar" Mode="In" />
+          <Parameter Name="ordernum" Type="int" Mode="In" />
+          <Parameter Name="tcount" Type="int" Mode="In" />
+        </Function>
+        <Function Name="updateProductsaleTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="admin">
+          <Parameter Name="productId" Type="int" Mode="In" />
+          <Parameter Name="onsaletime" Type="datetime" Mode="In" />
+          <Parameter Name="offsaletime" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="CDMAMallModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CDMAMallModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CDMAMallDbContext" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="AddProduct" ReturnType="Collection(Int32)">
+            <Parameter Name="productName" Mode="In" Type="String" />
+            <Parameter Name="productInfo" Mode="In" Type="String" />
+            <Parameter Name="productDescription" Mode="In" Type="String" />
+            <Parameter Name="productDetails" Mode="In" Type="String" />
+            <Parameter Name="pImagUrl" Mode="In" Type="String" />
+            <Parameter Name="subCategoryID" Mode="In" Type="Int32" />
+            <Parameter Name="merchantID" Mode="In" Type="Int32" />
+            <Parameter Name="TCount" Mode="In" Type="Int32" />
+            <Parameter Name="onSaleTime" Mode="In" Type="DateTime" />
+            <Parameter Name="offSaleTime" Mode="In" Type="DateTime" />
+            <Parameter Name="keywordProductID" Mode="In" Type="String" />
+            <Parameter Name="productTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="orderNum" Mode="In" Type="Int32" />
+            <Parameter Name="attributeXml" Mode="In" Type="String" />
+            <Parameter Name="imgs" Mode="In" Type="String" />
+            <Parameter Name="expressCompanyId" Mode="In" Type="Int32" />
+            <Parameter Name="expressFee" Mode="In" Type="Int32" />
+            <Parameter Name="isRecommand" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="AddProductExtend">
+            <Parameter Name="productInfo" Mode="In" Type="String" />
+            <Parameter Name="productDescription" Mode="In" Type="String" />
+            <Parameter Name="originalPrice" Mode="In" Type="Int32" />
+            <Parameter Name="TCount" Mode="In" Type="Int32" />
+            <Parameter Name="productId" Mode="In" Type="Int32" />
+            <Parameter Name="IsRecommanded" Mode="In" Type="Boolean" />
+            <Parameter Name="orderNum" Mode="In" Type="Int32" />
+            <Parameter Name="onsaletime" Mode="In" Type="DateTime" />
+            <Parameter Name="offsaletime" Mode="In" Type="DateTime" />
+            <Parameter Name="attributeValue" Mode="In" Type="String" />
+            <Parameter Name="attributeDes" Mode="In" Type="String" />
+            <Parameter Name="realPrice" Mode="In" Type="Int32" />
+            <Parameter Name="priceDescription" Mode="In" Type="String" />
+            <Parameter Name="presentCoin" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getProductInfos" ReturnType="Collection(CDMAMallModel.getProductInfos_Result)">
+            <Parameter Name="productId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getProductList" ReturnType="Collection(CDMAMallModel.getProductList_Result)">
+            <Parameter Name="subCategoryId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getSubCategory" ReturnType="Collection(CDMAMallModel.getSubCategory_Result)" />
+          <FunctionImport Name="updateExtendProduct" ReturnType="Collection(Int32)">
+            <Parameter Name="productId" Mode="In" Type="Int32" />
+            <Parameter Name="attributev" Mode="In" Type="String" />
+            <Parameter Name="pextendinfo" Mode="In" Type="String" />
+            <Parameter Name="onsaletime" Mode="In" Type="DateTime" />
+            <Parameter Name="offsaletime" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="updateProductInfo">
+            <Parameter Name="productId" Mode="In" Type="Int32" />
+            <Parameter Name="productName" Mode="In" Type="String" />
+            <Parameter Name="productsummary" Mode="In" Type="String" />
+            <Parameter Name="productDes" Mode="In" Type="String" />
+            <Parameter Name="ordernum" Mode="In" Type="Int32" />
+            <Parameter Name="tcount" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="updateProductsaleTime" ReturnType="Collection(Int32)">
+            <Parameter Name="productId" Mode="In" Type="Int32" />
+            <Parameter Name="onsaletime" Mode="In" Type="DateTime" />
+            <Parameter Name="offsaletime" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="getProductInfos_Result">
+          <Property Type="Int32" Name="productID" Nullable="false" />
+          <Property Type="String" Name="productName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="productInfo" Nullable="true" MaxLength="1024" />
+          <Property Type="String" Name="productDescription" Nullable="true" MaxLength="1024" />
+          <Property Type="String" Name="pImagUrl" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="onSaleTime" Nullable="false" />
+          <Property Type="DateTime" Name="offSaleTime" Nullable="true" />
+          <Property Type="Int32" Name="TCount" Nullable="false" />
+          <Property Type="Int32" Name="orderNum" Nullable="false" />
+          <Property Type="String" Name="attributeXml" Nullable="true" />
+          <Property Type="String" Name="productDetails" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getProductList_Result">
+          <Property Type="Int32" Name="productID" Nullable="false" />
+          <Property Type="String" Name="productName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="pImagUrl" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="onSaleTime" Nullable="false" />
+          <Property Type="DateTime" Name="offSaleTime" Nullable="true" />
+          <Property Type="String" Name="ProductTypeName" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="TCount" Nullable="false" />
+          <Property Type="Int32" Name="TSaleCount" Nullable="false" />
+          <Property Type="Int32" Name="TGoodReplyCnt" Nullable="false" />
+          <Property Type="Int32" Name="commentCNT" Nullable="false" />
+          <Property Type="Int32" Name="imgCommentCNT" Nullable="false" />
+          <Property Type="Int32" Name="consultcnt" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="getSubCategory_Result">
+          <Property Type="Int32" Name="subCategoryID" Nullable="false" />
+          <Property Type="String" Name="subCategoryName" Nullable="false" MaxLength="32" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CDMAMallModelStoreContainer" CdmEntityContainer="CDMAMallDbContext" >
+          <FunctionImportMapping FunctionImportName="AddProduct" FunctionName="CDMAMallModel.Store.AddProduct" />
+          <FunctionImportMapping FunctionImportName="AddProductExtend" FunctionName="CDMAMallModel.Store.AddProductExtend" />
+          <FunctionImportMapping FunctionImportName="getProductInfos" FunctionName="CDMAMallModel.Store.getProductInfos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CDMAMallModel.getProductInfos_Result">
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="productName" ColumnName="productName" />
+                <ScalarProperty Name="productInfo" ColumnName="productInfo" />
+                <ScalarProperty Name="productDescription" ColumnName="productDescription" />
+                <ScalarProperty Name="pImagUrl" ColumnName="pImagUrl" />
+                <ScalarProperty Name="onSaleTime" ColumnName="onSaleTime" />
+                <ScalarProperty Name="offSaleTime" ColumnName="offSaleTime" />
+                <ScalarProperty Name="TCount" ColumnName="TCount" />
+                <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+                <ScalarProperty Name="attributeXml" ColumnName="attributeXml" />
+                <ScalarProperty Name="productDetails" ColumnName="productDetails" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getProductList" FunctionName="CDMAMallModel.Store.getProductList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CDMAMallModel.getProductList_Result">
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="productName" ColumnName="productName" />
+                <ScalarProperty Name="pImagUrl" ColumnName="pImagUrl" />
+                <ScalarProperty Name="onSaleTime" ColumnName="onSaleTime" />
+                <ScalarProperty Name="offSaleTime" ColumnName="offSaleTime" />
+                <ScalarProperty Name="ProductTypeName" ColumnName="ProductTypeName" />
+                <ScalarProperty Name="TCount" ColumnName="TCount" />
+                <ScalarProperty Name="TSaleCount" ColumnName="TSaleCount" />
+                <ScalarProperty Name="TGoodReplyCnt" ColumnName="TGoodReplyCnt" />
+                <ScalarProperty Name="commentCNT" ColumnName="commentCNT" />
+                <ScalarProperty Name="imgCommentCNT" ColumnName="imgCommentCNT" />
+                <ScalarProperty Name="consultcnt" ColumnName="consultcnt" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getSubCategory" FunctionName="CDMAMallModel.Store.getSubCategory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CDMAMallModel.getSubCategory_Result">
+                <ScalarProperty Name="subCategoryID" ColumnName="subCategoryID" />
+                <ScalarProperty Name="subCategoryName" ColumnName="subCategoryName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="updateExtendProduct" FunctionName="CDMAMallModel.Store.updateExtendProduct" />
+          <FunctionImportMapping FunctionImportName="updateProductInfo" FunctionName="CDMAMallModel.Store.updateProductInfo" />
+          <FunctionImportMapping FunctionImportName="updateProductsaleTime" FunctionName="CDMAMallModel.Store.updateProductsaleTime" />
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="CDMAMallModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="CDMAMallModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="CDMAMallModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="CDMAMallModel.Store.sp_helpdiagramdefinition" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="CDMAMallModel.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="CDMAMallModel.Store.sp_renamediagram" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
